@@ -3,9 +3,9 @@ def verifica_senha(password):
     count_num = 0
     count_letter = 0
     count_pontuacao = 0
-    num_condicionais = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    num_condicionais = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']   
     pontuacao_condicionais = ['!', '?', ',', '.', ':', ';']
-    for i in password:
+    for i in password:                  #condicional para testar força da senha
         if i in num_condicionais:
             count_num += 1
         if i.isalpha():
@@ -20,7 +20,7 @@ def verifica_senha(password):
     elif count_num > 0 and count_letter > 0:
         return 'Senha forte'         
             
-    #return count_caracter, count_num, count_letter, count_pontuacao
+    return count_caracter, count_num, count_letter, count_pontuacao
 
 password = input('Digite uma senha: ')
 
